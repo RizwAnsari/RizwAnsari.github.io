@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+<h1>Search a movie using its name</h1>
+
+<div>
+    <form action="/result" method="GET">
+    <input type="text" name="movieName" placeholder="Movie Name">
+    <input type="submit" value="Search">
+    </form>
+
+    <!-- <form action="/result" method="POST">
+    <input type="text" name="movieName" placeholder="Movie Name">
+    <input type="submit" value="Search">
+    </form> -->
+</div>
+<%- include("partials/footer") %>
