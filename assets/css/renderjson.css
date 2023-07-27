@@ -1,0 +1,47 @@
+.renderjson {
+  margin: 0 3rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.renderjson a {
+  text-decoration: none;
+}
+
+.renderjson .disclosure {
+  color: #8458b3;
+}
+
+.renderjson .syntax {
+  color: grey;
+}
+
+.renderjson .string {
+  color: #00ad83;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.renderjson .number {
+  color: #007fff;
+}
+
+.renderjson .boolean {
+  color: plum;
+}
+
+.renderjson .key {
+  color: #e30b5c;
+}
+
+.renderjson .keyword {
+  color: #808080;
+}
+
+.renderjson .object.syntax {
+  color: #ff7518;
+}
+
+.renderjson .array.syntax {
+  color: #000;
+}
