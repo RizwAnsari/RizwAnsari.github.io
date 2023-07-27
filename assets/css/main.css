@@ -2,6 +2,10 @@
 @import url("./renderjson.css");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -49,6 +53,7 @@ body {
 
 .profile {
   width: 40%;
+  height: 100vh;
   right: 0;
   position: absolute;
 }
@@ -63,7 +68,7 @@ body {
 .branding__know-me {
   color: #fff;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-transform: uppercase;
   position: absolute;
   display: none;
@@ -106,10 +111,6 @@ body {
   .logo__last {
     font-size: 6rem;
   }
-
-  .branding__know-me {
-    display: block;
-  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -122,10 +123,6 @@ body {
   .logo__last {
     font-size: 5rem;
   }
-
-  .branding__know-me {
-    display: block;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -137,9 +134,5 @@ body {
   .logo__middle,
   .logo__last {
     font-size: 3rem;
-  }
-
-  .branding__know-me {
-    display: block;
   }
 }
