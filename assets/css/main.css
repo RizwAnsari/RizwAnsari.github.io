@@ -1,6 +1,6 @@
 @import url("./media.css");
 @import url("./renderjson.css");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -11,6 +11,13 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: Montserrat, sans-serif;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .branding {
@@ -68,7 +75,7 @@ body {
   text-align: center;
   font-size: 3rem;
   margin: 1rem;
-  color: #8458b3;
+  color: #ff7518;
 }
 
 .branding__know-me {
@@ -90,9 +97,14 @@ body {
   color: #000;
 }
 
-.profile__know-me{
+.profile__know-me {
   font-weight: 500;
   text-align: center;
+}
+
+.profile__know-me--highlight {
+  font-size: 1.4rem;
+  color: #ff7518;
 }
 
 /* media queries */
