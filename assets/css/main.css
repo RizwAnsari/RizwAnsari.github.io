@@ -82,6 +82,7 @@ body::-webkit-scrollbar {
   background-color: #f8f8f8;
   padding: 0.4rem;
   border-radius: 0.4rem;
+  text-align: center;
 }
 .profile__disclosure > * {
   text-decoration: none;
@@ -100,6 +101,10 @@ body::-webkit-scrollbar {
   border-radius: 0.4rem;
   color: #fff;
   font-weight: 600;
+}
+
+.object-syntax {
+  color: #808080;
 }
 
 .branding__know-me {
