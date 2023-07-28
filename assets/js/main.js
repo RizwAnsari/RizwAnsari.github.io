@@ -17,3 +17,7 @@ renderjson.set_show_to_level(0);
 renderjson.set_max_string_length(100);
 
 document.getElementById("profile__body").appendChild(renderjson(profileData));
+
+document
+  .querySelector("body")
+  .addEventListener("click", handlers.bodyClickHandler);

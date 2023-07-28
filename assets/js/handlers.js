@@ -1,35 +1,51 @@
 export default {
-    mouseOverHandler: (evt) => {
-        let target = evt.target;
-        let contains = target.classList.contains("logo__first");
+  mouseOverHandler: (evt) => {
+    let target = evt.target;
+    let contains = target.classList.contains("logo__first");
 
-        target.style[contains ? "paddingRight" : "paddingLeft"] = "0px";
+    target.style[contains ? "paddingRight" : "paddingLeft"] = "0px";
 
-        let middle = document.querySelector(".logo__middle");
-        middle.style.padding = "0.5rem 0px";
-        middle.style.backgroundColor = "#8458B3";
+    let middle = document.querySelector(".logo__middle");
+    middle.style.padding = "0.5rem 0px";
+    middle.style.backgroundColor = "#8458B3";
 
-        let partToChange = document.querySelector(
-            contains ? ".logo__last" : ".logo__first"
-        );
-        partToChange.style.padding = "0";
-        partToChange.style.backgroundColor = "#000";
-    },
+    let partToChange = document.querySelector(
+      contains ? ".logo__last" : ".logo__first"
+    );
+    partToChange.style.padding = "0";
+    partToChange.style.backgroundColor = "#000";
+  },
 
-    mouseOutHandler: (evt) => {
-        let target = evt.target;
-        let contains = target.classList.contains("logo__first");
+  mouseOutHandler: (evt) => {
+    let target = evt.target;
+    let contains = target.classList.contains("logo__first");
 
-        target.style[contains ? "paddingRight" : "paddingLeft"] = "5px";
+    target.style[contains ? "paddingRight" : "paddingLeft"] = "5px";
 
-        let middle = document.querySelector(".logo__middle");
-        middle.style.padding = "0px";
-        middle.style.backgroundColor = "#000";
+    let middle = document.querySelector(".logo__middle");
+    middle.style.padding = "0px";
+    middle.style.backgroundColor = "#000";
 
-        let partToChange = document.querySelector(
-            contains ? ".logo__last" : ".logo__first"
-        );
-        partToChange.style.padding = "0.5rem";
-        partToChange.style.backgroundColor = "#8458B3";
-    },
+    let partToChange = document.querySelector(
+      contains ? ".logo__last" : ".logo__first"
+    );
+    partToChange.style.padding = "0.5rem";
+    partToChange.style.backgroundColor = "#8458B3";
+  },
+
+  bodyClickHandler: () => {
+    let firstObjectSpan = document.querySelector(
+      ".renderjson > span > .object:first-child"
+    );
+
+    let profile = document.querySelector(".profile");
+    let profileKnowMe = document.querySelector(".profile__know-me");
+
+    if (firstObjectSpan.style.display !== "none") {
+      profile.style.display = "flex";
+      return (profileKnowMe.style.display = "block");
+    }
+    profile.style.display = "block";
+    profileKnowMe.style.display = "none";
+  },
 };
