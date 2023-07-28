@@ -45,12 +45,10 @@ export default {
     if (firstObjectSpan.style.display !== "none") {
       profile.style.display = "flex";
 
-      profileDisclosure.style.width = null;
       profileDisclosure.style.margin = null;
 
       return (profileKnowMe.style.display = "block");
     }
-    profileDisclosure.style.width = "255px";
     profileDisclosure.style.margin = "auto";
 
     profile.style.display = "block";
@@ -62,9 +60,7 @@ export default {
       document.querySelector(".profile").style.display = "block";
       document.querySelector(".profile__know-me").style.display = "none";
 
-      let profileDisclosure = document.querySelector(".profile__disclosure");
-      profileDisclosure.style.width = "220px";
-      profileDisclosure.style.margin = "auto";
+      document.querySelector(".profile__disclosure").style.margin = "auto";
       return (document.querySelector(`.level-${level}`).style.display = "none");
     }
     document.querySelector(".level-0").style.display = "none";

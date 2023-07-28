@@ -83,6 +83,7 @@ body::-webkit-scrollbar {
   padding: 0.4rem;
   border-radius: 0.4rem;
   text-align: center;
+  width: 224px;
 }
 .profile__disclosure > * {
   text-decoration: none;
