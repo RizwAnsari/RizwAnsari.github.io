@@ -52,9 +52,9 @@ export default {
       },
     ],
     socials: {
+      website: "https://rizwansari.com",
       github: "https://github.com/RizwAnsari",
       linkedin: "https://www.linkedin.com/in/ansari-rizwan",
-      website: "https://rizwansari.com",
     },
     languages: ["Hindi", "English", "Marathi"],
   },

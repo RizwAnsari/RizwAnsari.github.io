@@ -50,3 +50,9 @@
 .renderjson .array.syntax {
   color: #000;
 }
+
+.renderjson .disclosure,
+.renderjson .object.syntax,
+.renderjson .object.syntax + a {
+  font-size: 6rem;
+}

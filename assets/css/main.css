@@ -57,6 +57,11 @@ body {
   height: 100vh;
   right: 0;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .profile__title {
@@ -83,6 +88,10 @@ body {
 .branding__know-me:hover {
   background-color: #fff;
   color: #000;
+}
+
+.profile__know-me{
+  font-weight: 500;
 }
 
 /* media queries */
