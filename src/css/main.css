@@ -1,0 +1,192 @@
+@import url("./media.css");
+@import url("./renderjson.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.branding {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 60%;
+  background-color: #000;
+  color: #fff;
+  font-size: 8rem;
+  font-weight: 700;
+}
+
+.logo {
+  font-size: 0;
+}
+
+.logo__first,
+.logo__middle,
+.logo__last {
+  transition: 0.6s;
+  font-size: 8rem;
+}
+
+.logo__first,
+.logo__last {
+  background-color: #8458b3;
+  padding: 0.5rem;
+}
+
+.title {
+  margin: 0;
+}
+
+.title__dot {
+  color: #8458b3;
+}
+
+.profile {
+  width: 40%;
+  height: 100vh;
+  right: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile__title {
+  text-align: center;
+  font-size: 3rem;
+  margin: 1rem 1rem 0 1rem;
+  color: #ff7518;
+}
+
+.profile__disclosure {
+  background-color: #f8f8f8;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  width: 224px;
+}
+.profile__disclosure > * {
+  text-decoration: none;
+  padding: 0.5rem;
+  color: #ff7518;
+  font-weight: 500;
+}
+
+.profile__disclosure > span {
+  border-right: 2px solid #fff;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.profile__disclosure--highlight:hover {
+  background-color: #ff751850;
+  border-radius: 0.4rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.object-syntax {
+  color: #808080;
+}
+
+.branding__know-me {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  position: absolute;
+  display: none;
+  bottom: 4rem;
+  border: 3px solid #fff;
+  padding: 0.5rem;
+  transition: 0.6s;
+  font-weight: 900;
+}
+
+.branding__know-me:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.profile__know-me {
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0;
+}
+
+.profile__know-me--highlight {
+  font-size: 1.4rem;
+  color: #ff7518;
+}
+
+/* media queries */
+@media only screen and (max-width: 1200px) {
+  .branding {
+    width: 100%;
+    position: static;
+  }
+
+  .profile {
+    width: 100%;
+    position: static;
+  }
+
+  .branding__know-me {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .branding {
+    font-size: 6rem;
+  }
+
+  .logo__first,
+  .logo__middle,
+  .logo__last {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .branding {
+    font-size: 5rem;
+  }
+
+  .logo__first,
+  .logo__middle,
+  .logo__last {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .branding {
+    font-size: 3rem;
+  }
+
+  .logo__first,
+  .logo__middle,
+  .logo__last {
+    font-size: 3rem;
+  }
+}
