@@ -74,7 +74,7 @@ body::-webkit-scrollbar {
   text-align: center;
   font-size: 3rem;
   margin: 1rem 1rem 0 1rem;
-  color: #fa6400;
+  color: #ff7518;
 }
 
 .profile__disclosure {
@@ -87,7 +87,7 @@ body::-webkit-scrollbar {
 .profile__disclosure > * {
   text-decoration: none;
   padding: 0.5rem;
-  color: #000;
+  color: #ff7518;
   font-weight: 500;
 }
 
@@ -97,7 +97,7 @@ body::-webkit-scrollbar {
   font-weight: 600;
 }
 .profile__disclosure--highlight:hover {
-  background-color: #fa640050;
+  background-color: #ff751850;
   border-radius: 0.4rem;
   color: #fff;
   font-weight: 600;
@@ -134,7 +134,7 @@ body::-webkit-scrollbar {
 
 .profile__know-me--highlight {
   font-size: 1.4rem;
-  color: #000;
+  color: #ff7518;
 }
 
 /* media queries */
