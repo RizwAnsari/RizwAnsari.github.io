@@ -87,7 +87,7 @@ body::-webkit-scrollbar {
 .profile__disclosure > * {
   text-decoration: none;
   padding: 0.5rem;
-  color: #c75000;
+  color: #000;
   font-weight: 500;
 }
 
@@ -134,7 +134,7 @@ body::-webkit-scrollbar {
 
 .profile__know-me--highlight {
   font-size: 1.4rem;
-  color: #c75000;
+  color: #000;
 }
 
 /* media queries */
