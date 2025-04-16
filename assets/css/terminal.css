@@ -1,0 +1,91 @@
+@keyframes scaleUp {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.terminal-header {
+  background: #2d3748;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.terminal-dot:hover {
+  transform: scale(1.2);
+}
+
+#json-root {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  z-index: 9999 !important;
+  transform: none !important;
+  animation: scaleUp 0.5s ease-out;
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.fullscreen .terminal-header {
+  border-radius: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #1a1a1a;
+}
+
+.fullscreen.floating {
+  animation: none;
+}
+
+.fullscreen #json-root {
+  max-height: none;
+  height: calc(100vh - 40px);
+  padding: 2rem;
+}
+
+/* Scrollbar styling for the fullscreen mode */
+#json-root::-webkit-scrollbar {
+  width: 5px;
+}
+
+#json-root::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#json-root::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#json-root::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}

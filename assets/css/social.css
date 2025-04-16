@@ -1,0 +1,57 @@
+.social-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.social-link:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  z-index: 1;
+  transition: height 0.4s ease-in-out;
+}
+
+.social-link i {
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.social-link:hover::after {
+  height: 100%;
+}
+
+.social-link.github::after {
+  background: #2b3137;
+}
+
+.social-link.linkedin::after {
+  background: #0077b5;
+}
+
+.social-link.mail::after {
+  background: #ea4335;
+}
