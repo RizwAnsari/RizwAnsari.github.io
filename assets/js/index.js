@@ -141,6 +141,25 @@ function expandAllJsonSections() {
   });
 }
 
+function toggleFullscreen(shouldEnable) {
+  const container = document.querySelector(".json-container");
+  const floatingContainer = container.closest(".floating");
+
+  if (shouldEnable) {
+    container.classList.add("fullscreen");
+    if (floatingContainer) {
+      floatingContainer.classList.add("fullscreen");
+    }
+    document.body.style.overflow = "hidden";
+  } else {
+    container.classList.remove("fullscreen");
+    if (floatingContainer) {
+      floatingContainer.classList.remove("fullscreen");
+    }
+    document.body.style.overflow = "";
+  }
+}
+
 // Initialize
 document.addEventListener("DOMContentLoaded", () => {
   const jsonRoot = document.getElementById("json-root");
@@ -170,42 +189,44 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-  // Red button to collapse all
+  // Red button to collapse all and exit fullscreen
   const redDot = document.querySelector(".terminal-dot.bg-red-500");
-  redDot.addEventListener("click", collapseAllJsonSections);
+  redDot.addEventListener("click", () => {
+    // First collapse all sections
+    collapseAllJsonSections();
 
-  // Orange button to expand all
+    // Then after a delay, exit fullscreen
+    setTimeout(() => {
+      toggleFullscreen(false);
+    }, 400); // 300ms delay
+  });
+
+  // Orange button to enter fullscreen and expand all
   const orangeDot = document.querySelector(".terminal-dot.bg-yellow-500");
-  orangeDot.addEventListener("click", expandAllJsonSections);
+  orangeDot.addEventListener("click", () => {
+    // First enter fullscreen
+    toggleFullscreen(true);
+
+    // Then after a delay, expand all sections
+    setTimeout(() => {
+      expandAllJsonSections();
+    }, 100); // 300ms delay
+  });
 
   // Add fullscreen toggle functionality
   document.getElementById("fullscreen-toggle").addEventListener("click", () => {
     const container = document.querySelector(".json-container");
-    const floatingContainer = container.closest(".floating");
+    const isCurrentlyFullscreen = container.classList.contains("fullscreen");
+    toggleFullscreen(!isCurrentlyFullscreen);
+  });
 
-    container.classList.toggle("fullscreen");
-    if (floatingContainer) {
-      floatingContainer.classList.toggle("fullscreen");
-    }
-
-    // Prevent body scroll when fullscreen
-    document.body.style.overflow = container.classList.contains("fullscreen")
-      ? "hidden"
-      : "";
-
-    // Allow closing with Escape key
-    if (container.classList.contains("fullscreen")) {
-      const escHandler = (e) => {
-        if (e.key === "Escape") {
-          container.classList.remove("fullscreen");
-          if (floatingContainer) {
-            floatingContainer.classList.remove("fullscreen");
-          }
-          document.body.style.overflow = "";
-          document.removeEventListener("keydown", escHandler);
-        }
-      };
-      document.addEventListener("keydown", escHandler);
+  // Allow closing with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      const container = document.querySelector(".json-container");
+      if (container.classList.contains("fullscreen")) {
+        toggleFullscreen(false);
+      }
     }
   });
 });
