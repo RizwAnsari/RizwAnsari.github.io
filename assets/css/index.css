@@ -468,6 +468,7 @@ a:hover {
 
 .responsibilities {
   list-style-type: none;
+  text-align: justify;
 }
 
 .responsibilities li {
