@@ -389,11 +389,13 @@ a:hover {
 
 .left {
   left: 0;
+    z-index: 999;
 }
 
 .right {
   left: 50%;
   transform: translateX(50px);
+    z-index: 999;
 }
 
 .right::after {
@@ -401,7 +403,7 @@ a:hover {
 }
 
 .experience-content {
-  padding: 25px 30px;
+  padding: 20px;
   background-color: white;
   position: relative;
   border-radius: 10px;
@@ -503,11 +505,10 @@ a:hover {
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 40px;
+  gap: 25px;
 }
 
 .skill-category {
-  margin-bottom: 30px;
   background: white;
   padding: 25px;
   border-radius: 10px;
@@ -579,7 +580,7 @@ a:hover {
 .competencies-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 25px;
 }
 
 .competency-item {
@@ -636,7 +637,7 @@ a:hover {
 .education-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 40px;
+  gap: 25px;
   margin-top: 20px;
 }
 
@@ -869,13 +870,13 @@ a:hover {
 /* Responsive */
 @media (max-width: 991px) {
   .timeline::after {
-    left: 31px;
+    left: 2px;
   }
 
   .experience-item {
     width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
+    padding-left: 25px;
+    padding-right: 0;
   }
 
   .experience-item::after {
@@ -884,7 +885,7 @@ a:hover {
 
   .left::after,
   .right::after {
-    left: 15px;
+    left: -14px;
   }
 
   .right {
