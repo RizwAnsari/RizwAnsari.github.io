@@ -1,232 +1,267 @@
-import profile from "./profile.js";
+// Initialize particles.js
+document.addEventListener("DOMContentLoaded", function () {
+  // Particles.js configuration
+  particlesJS("particles-js", {
+    particles: {
+      number: {
+        value: 80,
+        density: {
+          enable: true,
+          value_area: 800,
+        },
+      },
+      color: {
+        value: "#ffffff",
+      },
+      shape: {
+        type: "circle",
+        stroke: {
+          width: 0,
+          color: "#000000",
+        },
+        polygon: {
+          nb_sides: 5,
+        },
+      },
+      opacity: {
+        value: 0.5,
+        random: false,
+        anim: {
+          enable: false,
+          speed: 1,
+          opacity_min: 0.1,
+          sync: false,
+        },
+      },
+      size: {
+        value: 3,
+        random: true,
+        anim: {
+          enable: false,
+          speed: 40,
+          size_min: 0.1,
+          sync: false,
+        },
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 2,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+        attract: {
+          enable: false,
+          rotateX: 600,
+          rotateY: 1200,
+        },
+      },
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "grab",
+        },
+        onclick: {
+          enable: true,
+          mode: "push",
+        },
+        resize: true,
+      },
+      modes: {
+        grab: {
+          distance: 140,
+          line_linked: {
+            opacity: 1,
+          },
+        },
+        bubble: {
+          distance: 400,
+          size: 40,
+          duration: 2,
+          opacity: 8,
+          speed: 3,
+        },
+        repulse: {
+          distance: 200,
+          duration: 0.4,
+        },
+        push: {
+          particles_nb: 4,
+        },
+        remove: {
+          particles_nb: 2,
+        },
+      },
+    },
+    retina_detect: true,
+  });
 
-function createChevron() {
-  return `
-    <svg class="w-4 h-4 inline-block transform transition-transform group-data-[expanded=true]:rotate-90" 
-         viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" 
-            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" 
-            clip-rule="evenodd" />
-    </svg>
-  `;
-}
+  // Initialize GSAP ScrollTrigger for animations
+  gsap.registerPlugin(ScrollTrigger);
 
-function renderValue(value, level = 0, isLast = true, isArrayInObject = false) {
-  if (typeof value === "string") {
-    return `<span class="text-emerald-300">"${value}"${
-      isLast ? "" : "<span class='json-comma'> ,</span>"
-    }</span>`;
-  }
-  if (typeof value === "number" || typeof value === "boolean") {
-    return `<span class="text-blue-300">${value}${
-      isLast ? "" : "<span class='json-comma'> ,</span>"
-    }</span>`;
-  }
-  if (value === null) {
-    return `<span class="text-gray-400">null${
-      isLast ? "" : "<span class='json-comma'> ,</span>"
-    }</span>`;
-  }
-  if (Array.isArray(value)) {
-    if (value.length === 0) {
-      return `<span class="text-gray-300">[</span><span class="text-gray-300">]${
-        isLast ? "" : "<span class='json-comma'> ,</span>"
-      }</span>`;
-    }
+  // Animate section titles
+  gsap.utils.toArray(".section-title").forEach((title) => {
+    gsap.to(title, {
+      scrollTrigger: {
+        trigger: title,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    });
+  });
 
-    const items = value
-      .map((item, index) => {
-        return `<div class="json-array-item">${renderValue(
-          item,
-          level + 2,
-          index === value.length - 1
-        )}</div>`;
-      })
-      .join("");
+  // Animate experience items
+  gsap.utils.toArray(".experience-item").forEach((item) => {
+    gsap.to(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      opacity: 1,
+      x: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    });
+  });
 
-    return `
-      <div>
-        <div class="json-square-bracket json-square-bracket-open"><span class="text-gray-300">[</span></div>
-        <div class="json-array-items">
-          ${items}
-        </div>
-        <div class="json-square-bracket json-square-bracket-close"><span class="text-gray-300">]${
-          isLast ? "" : "<span class='json-comma'> ,</span>"
-        }</span></div>
-      </div>
-    `;
-  }
-  if (typeof value === "object") {
-    const rendered = renderObject(value, level);
+  // Animate skill categories
+  gsap.utils.toArray(".skill-category").forEach((category, index) => {
+    gsap.to(category, {
+      scrollTrigger: {
+        trigger: category,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      delay: index * 0.1,
+      ease: "power2.out",
+    });
+  });
 
-    let index = rendered.lastIndexOf("</span>");
-    let before = rendered.slice(0, index);
-    let after = rendered.slice(index);
+  // Animate competency items
+  gsap.utils.toArray(".competency-item").forEach((item, index) => {
+    gsap.to(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      delay: index * 0.1,
+      ease: "power3.out",
+    });
+  });
 
-    return `${before} ${
-      isLast ? "" : "<span class='json-comma'> ,</span>"
-    } ${after}`;
-    // return `${rendered}${isLast ? "" : ","}`;
-  }
-}
+  // Animate education items
+  gsap.utils.toArray(".education-item").forEach((item, index) => {
+    gsap.to(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      delay: index * 0.15,
+      ease: "back.out(1.7)",
+    });
+  });
 
-function renderObject(obj, level = 0) {
-  if (!obj || Object.keys(obj).length === 0) {
-    return '<span class="text-gray-300">{}</span>';
-  }
+  // Back to top button
+  const backToTopButton = document.querySelector(".back-to-top");
 
-  const entries = Object.entries(obj)
-    .map(([key, value], index) => {
-      const isExpandable = typeof value === "object" && value !== null;
-      const isLast = index === Object.keys(obj).length - 1;
-
-      return `
-      <div class="json-section">
-        <div class="json-key group ${isExpandable ? "cursor-pointer" : ""}"
-             ${isExpandable ? 'data-expandable="true"' : ""}>
-          ${isExpandable ? createChevron() : ""}
-          <span class="text-blue-300 group-hover:text-blue-400 transition-colors">"${key}"</span>: 
-          ${!isExpandable ? renderValue(value, level + 1, isLast) : ""}
-        </div>
-        ${
-          isExpandable
-            ? `
-            <div class="json-content" data-expanded="true">
-              ${renderValue(value, level + 1, isLast, true)}
-            </div>
-            `
-            : ""
-        }
-      </div>
-    `;
-    })
-    .join("");
-
-  return `
-    <div class="json-object">
-      <div class="json-curly-brace json-curly-brace-open"><span class="text-gray-300">{</span></div>
-      ${entries}
-      <div class="json-curly-brace json-curly-brace-close"><span class="text-gray-300">}</span></div>
-    </div>
-  `;
-}
-
-function collapseAllJsonSections() {
-  const expandableSections = document.querySelectorAll(
-    '.json-key[data-expandable="true"]'
-  );
-  expandableSections.forEach((key) => {
-    const content = key.nextElementSibling;
-    const chevron = key.querySelector("svg");
-
-    if (content && content.classList.contains("expanded")) {
-      content.classList.remove("expanded");
-      chevron.style.transform = "";
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add("active");
+    } else {
+      backToTopButton.classList.remove("active");
     }
   });
-}
 
-function expandAllJsonSections() {
-  const expandableSections = document.querySelectorAll(
-    '.json-key[data-expandable="true"]'
-  );
-  expandableSections.forEach((key) => {
-    const content = key.nextElementSibling;
-    const chevron = key.querySelector("svg");
+  // Navigation active state
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-links a");
 
-    if (content && !content.classList.contains("expanded")) {
-      content.classList.add("expanded");
-      chevron.style.transform = "rotate(90deg)";
-    }
-  });
-}
+  window.addEventListener("scroll", () => {
+    let current = "";
 
-function toggleFullscreen(shouldEnable) {
-  const container = document.querySelector(".json-container");
-  const floatingContainer = container.closest(".floating");
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.clientHeight;
 
-  if (shouldEnable) {
-    container.classList.add("fullscreen");
-    if (floatingContainer) {
-      floatingContainer.classList.add("fullscreen");
-    }
-    document.body.style.overflow = "hidden";
-  } else {
-    container.classList.remove("fullscreen");
-    if (floatingContainer) {
-      floatingContainer.classList.remove("fullscreen");
-    }
-    document.body.style.overflow = "";
-  }
-}
-
-// Initialize
-document.addEventListener("DOMContentLoaded", () => {
-  const jsonRoot = document.getElementById("json-root");
-  jsonRoot.innerHTML = renderObject(profile);
-
-  // Add click handlers for JSON expansion
-  document
-    .querySelectorAll('.json-key[data-expandable="true"]')
-    .forEach((key) => {
-      key.addEventListener("click", (e) => {
-        const content = key.nextElementSibling;
-        const chevron = key.querySelector("svg");
-        const level = parseInt(content.style.getPropertyValue("--level")) || 0;
-
-        content.classList.toggle("expanded");
-        chevron.style.transform = content.classList.contains("expanded")
-          ? "rotate(90deg)"
-          : "";
-
-        // Animate nested items with staggered delay
-        const nestedItems = content.querySelectorAll(".json-section");
-        nestedItems.forEach((item, index) => {
-          item.style.transitionDelay = `${index * 50}ms`;
-        });
-
-        e.stopPropagation();
-      });
+      if (window.pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
     });
 
-  // Red button to collapse all and exit fullscreen
-  const redDot = document.querySelector(".terminal-dot.bg-red-500");
-  redDot.addEventListener("click", () => {
-    // First collapse all sections
-    collapseAllJsonSections();
-
-    // Then after a delay, exit fullscreen
-    setTimeout(() => {
-      toggleFullscreen(false);
-    }, 400); // 300ms delay
-  });
-
-  // Orange button to enter fullscreen and expand all
-  const orangeDot = document.querySelector(".terminal-dot.bg-yellow-500");
-  orangeDot.addEventListener("click", () => {
-    // First enter fullscreen
-    toggleFullscreen(true);
-
-    // Then after a delay, expand all sections
-    setTimeout(() => {
-      expandAllJsonSections();
-    }, 100); // 300ms delay
-  });
-
-  // Add fullscreen toggle functionality
-  document.getElementById("fullscreen-toggle").addEventListener("click", () => {
-    const container = document.querySelector(".json-container");
-    const isCurrentlyFullscreen = container.classList.contains("fullscreen");
-    toggleFullscreen(!isCurrentlyFullscreen);
-  });
-
-  // Allow closing with Escape key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      const container = document.querySelector(".json-container");
-      if (container.classList.contains("fullscreen")) {
-        toggleFullscreen(false);
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").substring(1) === current) {
+        link.classList.add("active");
       }
+
+      if (current === "" && link.getAttribute("href") === "#home") {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  // Mobile menu
+  const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+  const navLinksDiv = document.querySelector(".nav-links");
+
+  mobileMenuBtn.addEventListener("click", () => {
+    navLinksDiv.classList.toggle("active");
+
+    if (navLinksDiv.classList.contains("active")) {
+      mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+    } else {
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
     }
+  });
+
+  // Hide mobile menu when clicking on nav links
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinksDiv.classList.remove("active");
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+  });
+
+  // Auto-hide navbar on scroll down, show on scroll up
+  let lastScrollTop = 0;
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      navbar.classList.add("hidden");
+    } else {
+      navbar.classList.remove("hidden");
+    }
+
+    lastScrollTop = scrollTop;
   });
 });
