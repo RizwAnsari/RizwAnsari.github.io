@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patatap Clone</title>
+  <link rel="icon" href="../../assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="../../assets/favicons/favicon.ico" />
+  <meta name="description" content="Press keys to make sounds and colour. Visuals with Paper.js, audio with Howler.js." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="patatap.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.js"></script>
+  <script src="paper-full.js"></script>
+  <script type="text/paperscript" canvas="myCanvas">
+    // key -> sound file and colour
+    var map = {
+      q: ["bubbles", "#1abc9c"], w: ["clay", "#2ecc71"], e: ["confetti", "#3498db"],
+      r: ["corona", "#9b59b6"], t: ["dotted-spiral", "#34495e"], y: ["flash-1", "#16a085"],
+      u: ["flash-2", "#27ae60"], i: ["flash-3", "#2980b9"], o: ["glimmer", "#8e44ad"],
+      p: ["moon", "#2c3e50"], a: ["pinwheel", "#f1c40f"], s: ["piston-1", "#e67e22"],
+      d: ["piston-2", "#e74c3c"], f: ["prism-1", "#95a5a6"], g: ["prism-2", "#f39c12"],
+      h: ["prism-3", "#d35400"], j: ["splits", "#1abc9c"], k: ["squiggle", "#2ecc71"],
+      l: ["strike", "#3498db"], z: ["suspension", "#9b59b6"], x: ["timer", "#34495e"],
+      c: ["ufo", "#16a085"], v: ["veil", "#27ae60"], b: ["wipe", "#2980b9"],
+      n: ["zig-zag", "#8e44ad"], m: ["piston-3", "#2c3e50"]
+    };
+
+    var sounds = {};
+    for (var k in map) {
+      sounds[k] = new Howl({ src: ["sounds/" + map[k][0] + ".mp3"], preload: true });
+    }
+
+    var circles = [];
+
+    // play one key: sound + a coloured circle that shrinks away
+    function play(key) {
+      key = String(key).toLowerCase();
+      if (!map[key]) return false;
+      sounds[key].play();
+      var size = Math.max(view.size.width, view.size.height);
+      var center = Point.random() * view.size;
+      var circle = new Path.Circle(center, size * 0.32);
+      circle.fillColor = map[key][1];
+      circles.push(circle);
+      return true;
+    }
+    window.patatapPlay = play;
+
+    function onKeyDown(event) {
+      play(event.key);
+    }
+
+    // tap or click anywhere plays a random sound
+    var letters = Object.keys(map);
+    function onMouseDown() {
+      play(letters[Math.floor(Math.random() * letters.length)]);
+    }
+
+    function onFrame() {
+      for (var i = circles.length - 1; i >= 0; i--) {
+        var c = circles[i];
+        c.fillColor.hue += 1;
+        c.scale(0.9);
+        if (c.area < 1) {
+          c.remove();
+          circles.splice(i, 1);
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="myCanvas" resize></canvas>
+
+  <div class="bar">
+    <a class="pill" href="../../#playground">&larr; Portfolio</a>
+    <button class="pill" id="mute" type="button" aria-pressed="false">Sound on</button>
+  </div>
+
+  <div class="intro" id="intro">
+    <h1>Patatap Clone</h1>
+    <p>Press any letter key, or tap the screen.</p>
+  </div>
+
+  <div class="keys" id="keys" aria-label="On-screen keyboard"></div>
+
+  <script>
+    (function () {
+      var rows = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
+      var colors = {q:"#1abc9c",w:"#2ecc71",e:"#3498db",r:"#9b59b6",t:"#34495e",y:"#16a085",u:"#27ae60",i:"#2980b9",o:"#8e44ad",p:"#2c3e50",a:"#f1c40f",s:"#e67e22",d:"#e74c3c",f:"#95a5a6",g:"#f39c12",h:"#d35400",j:"#1abc9c",k:"#2ecc71",l:"#3498db",z:"#9b59b6",x:"#34495e",c:"#16a085",v:"#27ae60",b:"#2980b9",n:"#8e44ad",m:"#2c3e50"};
+      var wrap = document.getElementById("keys");
+      var caps = {};
+      rows.forEach(function (row) {
+        var r = document.createElement("div");
+        r.className = "row";
+        row.split("").forEach(function (ch) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.textContent = ch;
+          b.style.setProperty("--c", colors[ch]);
+          b.addEventListener("pointerdown", function (e) {
+            e.stopPropagation();
+            fire(ch);
+          });
+          caps[ch] = b;
+          r.appendChild(b);
+        });
+        wrap.appendChild(r);
+      });
+
+      var intro = document.getElementById("intro");
+      function fire(ch) {
+        if (window.patatapPlay) window.patatapPlay(ch);
+        flash(ch);
+        hideIntro();
+      }
+      function flash(ch) {
+        var b = caps[ch];
+        if (!b) return;
+        b.classList.add("on");
+        setTimeout(function () { b.classList.remove("on"); }, 160);
+      }
+      function hideIntro() {
+        intro.classList.add("gone");
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey || e.metaKey || e.altKey) return;
+        var ch = e.key.toLowerCase();
+        if (caps[ch]) { flash(ch); hideIntro(); }
+      });
+      document.getElementById("myCanvas").addEventListener("pointerdown", hideIntro);
+
+      var mute = document.getElementById("mute");
+      mute.addEventListener("click", function () {
+        var off = mute.getAttribute("aria-pressed") !== "true";
+        mute.setAttribute("aria-pressed", String(off));
+        mute.textContent = off ? "Sound off" : "Sound on";
+        if (window.Howler) Howler.mute(off);
+      });
+    })();
+  </script>
+</body>
+</html>

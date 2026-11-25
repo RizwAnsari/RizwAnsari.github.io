@@ -1,0 +1,247 @@
+.gallery {
+  max-width: 1040px;
+  padding: 40px 16px 64px;
+}
+.gallery-head {
+  margin-bottom: 26px;
+}
+.gallery-head h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  letter-spacing: -0.03em;
+}
+.gallery-head p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.shot {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  overflow: hidden;
+  cursor: zoom-in;
+  aspect-ratio: 16 / 11;
+}
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.shot img.loaded {
+  opacity: 1;
+  transform: none;
+}
+.shot:hover img.loaded {
+  transform: scale(1.05);
+}
+.shot::after {
+  content: attr(data-n);
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 2px 9px;
+  border-radius: 99px;
+  background: rgba(12, 13, 16, 0.72);
+  color: #f1f2f6;
+  font-size: 0.74rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.shot:hover::after,
+.shot:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+
+/* lightbox */
+.lightbox {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #f1f2f6;
+}
+.lightbox[open] {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+}
+.lightbox::backdrop {
+  background: rgba(6, 7, 10, 0.92);
+  backdrop-filter: blur(6px);
+}
+.lightbox figure {
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.lightbox img {
+  max-width: 100%;
+  max-height: calc(100vh - 110px);
+  border-radius: 10px;
+  object-fit: contain;
+  animation: lbIn 0.25s ease;
+}
+@keyframes lbIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+.lightbox figcaption {
+  font-size: 0.85rem;
+  color: #c4c8d6;
+}
+.lb-nav,
+.lb-close {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1f2f6;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lb-nav {
+  width: 46px;
+  height: 46px;
+  font-size: 1.9rem;
+  line-height: 1;
+}
+.lb-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  font-size: 1.6rem;
+}
+.lb-nav:hover,
+.lb-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+@media (max-width: 600px) {
+  .lightbox[open] {
+    grid-template-columns: 1fr;
+    align-content: center;
+  }
+  .lb-nav {
+    position: absolute;
+    bottom: 18px;
+  }
+  .lb-nav.prev {
+    left: 18px;
+  }
+  .lb-nav.next {
+    right: 18px;
+  }
+}
+
+.shot.broken {
+  cursor: default;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+.shot.broken img {
+  display: none;
+}
+.shot.broken::before {
+  content: "Photo unavailable";
+  font-size: 0.85rem;
+}
+.shot.broken::after {
+  display: none;
+}
+
+.lightbox img {
+  transition: opacity 0.3s;
+}
+.lightbox img.loading {
+  opacity: 0.92;
+}
+
+/* ---------- Gallery: editorial, quiet, photos first ---------- */
+:root {
+  --bg: #09090b;
+  --bg-2: #0f0f12;
+  --card: #111114;
+  --card-hi: #18181c;
+  --line: #222227;
+  --text: #ececf0;
+  --muted: #9d9dab;
+  --accent: #f4f1ea;
+  --on-accent: #0a0a0c;
+}
+[data-theme="light"] {
+  --bg: #fafaf8;
+  --bg-2: #ffffff;
+  --card: #ffffff;
+  --card-hi: #f1f1ee;
+  --line: #e3e3de;
+  --text: #121214;
+  --muted: #55555f;
+  --accent: #121214;
+  --on-accent: #ffffff;
+}
+.gallery {
+  max-width: 1180px;
+}
+.gallery-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+.gallery-head h1 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.gallery-head p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+#grid {
+  --bs-gutter-x: 6px;
+  --bs-gutter-y: 6px;
+}
+.shot {
+  border: 0;
+  border-radius: 2px;
+}
+.shot:hover img.loaded {
+  transform: scale(1.04);
+}
+.shot::after {
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+}
+.lightbox img {
+  border-radius: 2px;
+}

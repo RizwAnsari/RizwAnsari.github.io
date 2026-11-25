@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+  <link rel="icon" href="../../assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="../../assets/favicons/favicon.ico" />
+  <meta name="description" content="A responsive photo gallery with a keyboard-friendly lightbox. Built with Bootstrap." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css" />
+  <link rel="stylesheet" href="../shared/app.css" />
+  <link rel="stylesheet" href="ImageGallery.css" />
+  <script src="../shared/app.js"></script>
+</head>
+<body data-app-title="Image Gallery">
+  <main class="gallery container">
+    <header class="gallery-head">
+      <h1>Image Gallery</h1>
+      <p>Photographs from Unsplash. Select one to view it larger, then use the arrow keys.</p>
+    </header>
+    <div class="row g-3" id="grid"></div>
+  </main>
+
+  <dialog id="lightbox" class="lightbox" aria-label="Image viewer">
+    <button class="lb-close" type="button" aria-label="Close viewer">&times;</button>
+    <button class="lb-nav prev" type="button" aria-label="Previous image">&#8249;</button>
+    <figure>
+      <img id="lb-img" alt="" />
+      <figcaption id="lb-count"></figcaption>
+    </figure>
+    <button class="lb-nav next" type="button" aria-label="Next image">&#8250;</button>
+  </dialog>
+
+  <script src="gallery.js"></script>
+</body>
+</html>

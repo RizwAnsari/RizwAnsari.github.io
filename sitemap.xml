@@ -7,25 +7,25 @@
   </url>
   
   <url>
-    <loc>https://rizwansari.com/apps/image-gallery</loc>
+    <loc>https://rizwansari.com/playground/gallery</loc>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://rizwansari.com/apps/patatap-clone</loc>
+    <loc>https://rizwansari.com/playground/patatap</loc>
     <priority>0.90</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://rizwansari.com/apps/the-rgb-game</loc>
+    <loc>https://rizwansari.com/playground/rgb-game</loc>
     <priority>0.95</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://rizwansari.com/apps/todo-app</loc>
+    <loc>https://rizwansari.com/playground/todo</loc>
     <priority>0.85</priority>
     <changefreq>monthly</changefreq>
   </url>

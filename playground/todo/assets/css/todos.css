@@ -1,0 +1,239 @@
+.todo {
+  width: min(560px, 100% - 32px);
+  margin: 0 auto;
+  padding: 40px 0 64px;
+}
+.todo-head {
+  margin-bottom: 20px;
+}
+.todo-head h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  letter-spacing: -0.03em;
+}
+.todo-head p {
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+
+.add {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.add input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.add input::placeholder {
+  color: var(--muted);
+}
+.add input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.link {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 0.88rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.link:hover {
+  color: var(--text);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  animation: slide 0.25s ease backwards;
+  transition: border-color 0.2s;
+}
+.item:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+}
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+.check {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1.5px solid var(--muted);
+  border-radius: 7px;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.check svg {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.15s, transform 0.15s;
+}
+.item.done .check {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.item.done .check svg {
+  opacity: 1;
+  transform: none;
+}
+.text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.item.done .text {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+.del {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, color 0.2s, background 0.2s;
+}
+.item:hover .del,
+.del:focus-visible {
+  opacity: 1;
+}
+.del:hover {
+  color: var(--bad);
+  background: color-mix(in srgb, var(--bad) 12%, transparent);
+}
+@media (hover: none) {
+  .del {
+    opacity: 1;
+  }
+}
+.empty {
+  padding: 28px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ---------- Todo: calm, paper-like, sage green ---------- */
+:root {
+  --bg: #15140f;
+  --bg-2: #1b1a14;
+  --card: #1e1c16;
+  --card-hi: #25231b;
+  --line: #36332a;
+  --text: #f4f0e6;
+  --muted: #b5ad9d;
+  --accent: #8fc29a;
+  --on-accent: #0f1a12;
+  --ok: #8fc29a;
+  --bad: #f0a39b;
+}
+[data-theme="light"] {
+  --bg: #f6f1e6;
+  --bg-2: #fffdf8;
+  --card: #fffdf8;
+  --card-hi: #f1ebdc;
+  --line: #e2dac6;
+  --text: #2a2620;
+  --muted: #655d4f;
+  --accent: #2f6b45;
+  --on-accent: #ffffff;
+  --ok: #2f6b45;
+  --bad: #a3322a;
+}
+.todo-head h1 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: clamp(2.2rem, 6vw, 3rem);
+}
+.item,
+.add input {
+  border-radius: 16px;
+}
+.item {
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--text) 4%, transparent), 0 8px 18px -14px rgba(0, 0, 0, 0.35);
+}
+.check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.item.done .check svg {
+  animation: tick 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes tick {
+  from {
+    transform: scale(0.2) rotate(-20deg);
+  }
+}
+.btn.primary,
+.segmented,
+.segmented button {
+  border-radius: 999px;
+}
+.btn.primary {
+  padding-inline: 22px;
+}
+
+/* touch: bigger hit areas without changing the look */
+.check {
+  position: relative;
+}
+.check::after {
+  content: "";
+  position: absolute;
+  inset: -12px;
+}
+.link {
+  padding: 12px 6px;
+}
+@media (hover: none) {
+  .del {
+    width: 44px;
+    height: 44px;
+  }
+}

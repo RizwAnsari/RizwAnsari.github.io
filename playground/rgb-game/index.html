@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RGB Colour Guessing Game</title>
+  <link rel="icon" href="../../assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="../../assets/favicons/favicon.ico" />
+  <meta name="description" content="Guess which colour matches the RGB value shown. Easy and hard modes, with a streak counter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/app.css" />
+  <link rel="stylesheet" href="colorGame.css" />
+  <script src="../shared/app.js"></script>
+</head>
+<body data-app-title="RGB Colour Game">
+  <main class="game">
+    <p class="eyebrow">Which colour is this?</p>
+    <h1 class="target" id="target" aria-live="polite"><span class="r">0</span><span class="g">0</span><span class="b">0</span></h1>
+    <p class="status" id="status" role="status">Pick the square that matches the value.</p>
+
+    <div class="controls">
+      <div class="segmented" role="group" aria-label="Difficulty">
+        <button type="button" data-count="3" aria-pressed="false">Easy</button>
+        <button type="button" data-count="6" aria-pressed="true">Hard</button>
+      </div>
+      <button type="button" class="btn primary" id="reset">New colours</button>
+    </div>
+
+    <div class="board" id="board" role="group" aria-label="Colour options"></div>
+
+    <dl class="scoreboard">
+      <div><dt>Streak</dt><dd id="streak">0</dd></div>
+      <div><dt>Best</dt><dd id="best">0</dd></div>
+      <div><dt>Misses</dt><dd id="misses">0</dd></div>
+    </dl>
+    <p class="hint">Tip: press <kbd>1</kbd>–<kbd>6</kbd> to pick a square and <kbd>N</kbd> for new colours.</p>
+  </main>
+  <script src="colorGame.js"></script>
+</body>
+</html>
