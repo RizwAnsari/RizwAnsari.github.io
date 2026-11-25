@@ -1,11 +1,11 @@
 {
-  "name": "Rizwan Ansari | Senior Software Developer",
+  "name": "Rizwan Ansari | Senior Software Engineer",
   "short_name": "RizwAnsari",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
-  "description": "Portfolio of Rizwan Ansari, a senior software developer with 4+ years of experience in building scalable web applications and leading tech projects.",
+  "background_color": "#07080c",
+  "theme_color": "#07080c",
+  "description": "Portfolio of Rizwan Ansari, a Senior Software Engineer with 5+ years of experience in building scalable web applications and leading tech projects.",
   "orientation": "portrait",
   "scope": "/",
   "icons": [

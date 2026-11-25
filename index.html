@@ -1,717 +1,444 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>
-      Rizwan Ansari | Senior Software Developer | Full-Stack Engineer
-    </title>
+    <title>Rizwan Ansari | Senior Software Engineer</title>
     <meta
       name="description"
-      content="Rizwan Ansari is a Senior Software Developer with 4+ years of experience in building scalable web applications, optimizing APIs, and leading impactful tech projects."
+      content="Rizwan Ansari is a Senior Software Engineer with 5+ years of experience building scalable applications, optimizing APIs, and running AWS/Linux infrastructure. Laravel, Node.js, React."
     />
     <meta
       name="keywords"
-      content="Rizwan Ansari, RizwAnsari, Senior Software Developer, Full-Stack Developer, Laravel Developer, Web Developer, Portfolio, GitHub, LinkedIn"
+      content="Rizwan Ansari, Senior Software Engineer, Laravel, Node.js, React, AWS, API optimization, Full-Stack Developer, Portfolio"
     />
-
+    <meta name="theme-color" content="#07080c" />
     <link rel="manifest" href="/manifest.json" />
-
     <link rel="canonical" href="https://rizwansari.com/" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://rizwansari.com/" />
-    <meta
-      property="og:title"
-      content="Rizwan Ansari | Senior Software Developer"
-    />
+    <meta property="og:title" content="Rizwan Ansari | Senior Software Engineer" />
     <meta
       property="og:description"
-      content="Explore Rizwan Ansari’s portfolio, featuring full-stack development work, AI-driven solutions, and optimized backend systems."
+      content="5+ years building scalable systems: 90% faster APIs, ₹20L+ saved annually, 99%+ uptime on AWS."
     />
-    <meta
-      property="og:image"
-      content="https://rizwansari.com/assets/images/og-image.jpg"
-    />
-
-    <!-- Twitter -->
+    <meta property="og:image" content="https://rizwansari.com/assets/images/og-image.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Rizwan Ansari | Senior Software Developer"
-    />
+    <meta name="twitter:title" content="Rizwan Ansari | Senior Software Engineer" />
     <meta
       name="twitter:description"
-      content="Senior developer with 4+ years experience in scalable systems, clean code, and AI tools."
+      content="Senior Software Engineer: Laravel, Node.js, React, AWS. Scalable systems, fast APIs, end-to-end ownership."
     />
-    <meta
-      name="twitter:image"
-      content="https://rizwansari.com/assets/images/twitter-card.jpg"
-    />
+    <meta name="twitter:image" content="https://rizwansari.com/assets/images/twitter-card.jpg" />
 
-    <link rel="icon" href="./assets/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./assets/favicons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicons/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./assets/favicons/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" href="./assets/favicons/apple-touch-icon.png" />
 
-    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Rizwan Ansari",
         "url": "https://rizwansari.com",
+        "email": "contact@rizwansari.com",
         "sameAs": [
           "https://github.com/RizwAnsari",
           "https://linkedin.com/in/ansari-rizwan"
         ],
-        "jobTitle": "Senior Software Developer",
-        "description": "Experienced full-stack developer with a focus on Laravel, APIs, and AI-assisted development.",
-        "image": "https://rizwansari.com/assets/images/profile.jpg"
+        "jobTitle": "Senior Software Engineer",
+        "worksFor": { "@type": "Organization", "name": "Tiny Epic Solutions Pvt Ltd" },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Ramniranjan Jhunjhunwala College" },
+          { "@type": "CollegeOrUniversity", "name": "Rizvi College of Arts, Science & Commerce" }
+        ],
+        "knowsAbout": ["Laravel", "Node.js", "React", "AWS", "REST APIs", "MySQL", "MongoDB"],
+        "description": "Senior Software Engineer with 5+ years of experience building scalable applications and optimizing APIs."
       }
     </script>
 
-    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/index.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-
-    <!-- Scripts -->
-    <script type="module" src="./assets/js/index.js"></script>
+    <script>
+      // apply saved theme before paint
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <script defer src="./assets/js/index.js"></script>
   </head>
 
   <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="navbar-container container">
-        <a href="#" class="logo">
-          <div class="logo-icon"><i class="fas fa-code"></i></div>
-          <div class="brand">
-            <div class="word-part">
-              <span class="r">r</span><span class="hide-left">izw</span>
-            </div>
-            <div class="word-part adjust-margin">
-              <span class="a">a</span><span class="hide-right">nsari</span>
-            </div>
-          </div>
-        </a>
-        <div class="nav-links">
-          <a href="#home" class="active">Home</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#competencies">Competencies</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <button class="mobile-menu-btn">
-          <i class="fas fa-bars"></i>
+    
+
+    <header class="nav" id="nav">
+      <a href="#home" class="nav-logo" aria-label="Home" title="Rizwan Ansari">
+        <span class="brand" id="brand" aria-label="Rizwan Ansari">
+          <span class="part">
+            <span class="lead"><span class="lo" aria-hidden="true">r</span><span class="up">R</span></span>
+            <span class="rest"><span>izw</span></span>
+          </span>
+          <span class="part">
+            <span class="lead a"><span class="lo" aria-hidden="true">a</span><span class="up">A</span></span>
+            <span class="rest shared"><span>n</span></span>
+            <span class="rest"><span>sari</span></span>
+          </span>
+        </span>
+      </a>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary">
+        <a href="#impact">Impact</a>
+        <a href="#experience">Experience</a>
+        <a href="#stack">Stack</a>
+        <a href="#playground">Playground</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn primary menu-cta">Get in touch</a>
+      </nav>
+      <div class="nav-actions">
+        
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <svg class="i-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="i-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
       </div>
-    </nav>
-
-    <!-- Header -->
-    <header id="home" class="header">
-      <div id="particles-js"></div>
-      <div class="container">
-        <div class="profile-info">
-          <h1 class="profile-name">Rizwan Niyamat Ali Ansari</h1>
-          <h2 class="profile-title">Senior Software Developer</h2>
-          <p class="profile-summary">
-            With 4+ years of experience in building scalable applications,
-            optimizing APIs, and leading high-impact projects. Known for clean
-            code, system ownership, and leveraging AI tools to accelerate
-            delivery and innovation.
-          </p>
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <span>+91 ********89</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:contact@rizwansari.com" class="email-address"
-                >contact@rizwansari.com</a
-              >
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Ambernath (W), 421501</span>
-            </div>
-          </div>
-          <div class="social-links">
-            <a
-              href="https://rizwansari.com"
-              class="social-link"
-              target="_blank"
-              title="Website"
-            >
-              <i class="fas fa-globe"></i>
-            </a>
-            <a
-              href="https://github.com/RizwAnsari"
-              class="social-link"
-              target="_blank"
-              title="GitHub"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-            <a
-              href="https://linkedin.com/in/ansari-rizwan"
-              class="social-link"
-              target="_blank"
-              title="LinkedIn"
-            >
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <a href="#experience" class="scroll-down">
-        <i class="fas fa-chevron-down"></i>
-      </a>
     </header>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="section-title">Work Experience</h2>
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero wrap">
+        <div class="hero-copy">
+          <p class="kicker"><span class="live"></span>Senior Software Engineer</p>
+          <h1 class="display">Rizwan Ansari</h1>
+          <p class="lede">
+            I build and run backend systems that stay fast and stay up. With
+            <b data-exp>5y 10m</b> of experience, I ship APIs, cloud infrastructure
+            and full-stack products, from first commit to production support.
+          </p>
+          <div class="cta-row">
+            <a href="#contact" class="btn primary">Get in touch <span class="arr" aria-hidden="true">→</span></a>
+            <a href="#experience" class="btn ghost">View experience</a>
+            <a href="https://github.com/RizwAnsari" target="_blank" rel="noopener" class="btn ghost">GitHub</a>
+            <a href="https://linkedin.com/in/ansari-rizwan" target="_blank" rel="noopener" class="btn ghost">LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="now" aria-label="Current role and highlights">
+          <div class="now-top">
+            <span class="now-label"><span class="live"></span>Currently</span>
+            <span class="now-date">Since Apr 2026</span>
+          </div>
+          <h2 class="now-role">Senior Software Engineer</h2>
+          <p class="now-co"><a class="co-link" href="https://www.tinyepic.in/" target="_blank" rel="noopener">Tiny Epic Solutions Pvt Ltd</a></p>
+          <p class="now-desc">Owning the Bonanza PHP/Laravel platforms end to end, plus AWS infrastructure and CI/CD.</p>
+          <div class="now-stats">
+            <div><b>90%</b><span>faster APIs</span></div>
+            <div><b>₹20L+</b><span>saved per year</span></div>
+            <div><b>99%+</b><span>uptime on AWS</span></div>
+          </div>
+          <div class="chips"><span>Laravel</span><span>Node.js</span><span>React</span><span>AWS</span><span>MySQL</span></div>
+        </aside>
+      </section>
+
+      <!-- IMPACT -->
+      <section id="impact" class="section wrap">
+        <div class="sec-head reveal" data-label="Impact">
+          <h2>Results that matter</h2>
+          <p>Measured results from production systems.</p>
+        </div>
+
+        <div class="bento">
+          <article class="card reveal spot">
+            <p class="stat"><span class="count" data-to="90">0</span><small>%</small></p>
+            <h3>Faster API responses</h3>
+            <p>Indexing, query optimization and caching took slow endpoints to a fraction of their response time.</p>
+          </article>
+
+          <article class="card reveal spot">
+            <p class="stat">₹<span class="count" data-to="20">0</span><small>L+</small></p>
+            <h3>Saved every year</h3>
+            <p>Architected an in-house video meeting platform on Agora SDK, replacing third-party services.</p>
+          </article>
+
+          <article class="card reveal spot">
+            <p class="stat"><span class="count" data-to="100">0</span><small>k+</small></p>
+            <h3>Daily requests</h3>
+            <p>Built and maintained ResourceQueue, a core company product, at near 99% uptime.</p>
+          </article>
+
+          <article class="card reveal spot">
+            <p class="stat"><span class="count" data-to="40">0</span><small>%</small></p>
+            <h3>Higher throughput</h3>
+            <p>API refactoring, DB indexing and caching across the backend.</p>
+          </article>
+
+          <article class="card reveal spot">
+            <p class="stat"><span class="count" data-to="70">0</span><small>%</small></p>
+            <h3>Less manual work</h3>
+            <p>Automated integrations with enterprise systems: SBI, LIC and ICICI.</p>
+          </article>
+
+          <article class="card reveal spot">
+            <p class="stat"><span class="count" data-to="30">0</span><small>%</small></p>
+            <h3>Less technical debt</h3>
+            <p>Led and mentored 5+ developers with code standards and reviews. Also cut webhook latency by 30% with event-driven endpoints.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section wrap">
+        <div class="sec-head reveal" data-label="Experience">
+          <h2>Where I've worked</h2>
+          <p>Four roles across three companies.</p>
+        </div>
+
+        <div class="career reveal" id="career" aria-label="Career timeline. Select a role to jump to it.">
+          <div class="career-head">
+            <span>Jan 2021</span>
+            <span class="career-total"><b data-exp>5y 10m</b> in total</span>
+            <span>Today</span>
+          </div>
+          <div class="career-bar">
+            <button type="button" class="seg" data-start="2021-01" data-end="2023-02" data-target="#job-zedex">
+              <span class="seg-co">ZedexInfo</span><span class="seg-role">Web Developer</span><span class="seg-dur"></span>
+            </button>
+            <button type="button" class="seg" data-start="2023-03" data-end="2024-03" data-target="#job-cml-dev">
+              <span class="seg-co">CallMediLife</span><span class="seg-role">Developer</span><span class="seg-dur"></span>
+            </button>
+            <button type="button" class="seg" data-start="2024-04" data-end="2026-03" data-target="#job-cml-sr">
+              <span class="seg-co">CallMediLife</span><span class="seg-role">Senior Developer</span><span class="seg-dur"></span>
+            </button>
+            <button type="button" class="seg current" data-start="2026-04" data-end="now" data-target="#job-tiny">
+              <span class="seg-co">Tiny Epic</span><span class="seg-role">Senior Engineer</span><span class="seg-dur"></span>
+            </button>
+          </div>
+          <div class="career-ticks" aria-hidden="true"></div>
+        </div>
 
         <div class="timeline">
-          <div class="experience-item left">
-            <div class="experience-content">
-              <div class="experience-header">
-                <h3 class="company-name">
-                  CallMediLife Healthcare Services Private Limited
-                </h3>
-                <div class="experience-meta">
-                  <span
-                    ><i class="far fa-calendar-alt"></i> Mar 2023 –
-                    present</span
-                  >
-                  <span
-                    ><i class="fas fa-map-marker-alt"></i> Marol, Andheri</span
-                  >
-                </div>
-              </div>
-
-              <div class="role">
-                <div class="role-header">
-                  <h4 class="role-title">Senior Software Developer</h4>
-                  <span class="role-duration">Apr 2024 – present</span>
-                </div>
-                <ul class="responsibilities">
-                  <li>
-                    Integrated Agora Video SDK to launch a robust in-house Video
-                    MER for LIC & ICICI Prudential, eliminating third-party
-                    agencies, saving ₹10L+ annually, and establishing a scalable
-                    model for other insurers.
-                  </li>
-                  <li>
-                    Actively contribute as a hands-on developer, writing
-                    production-grade code, driving architectural decisions, and
-                    optimizing backend systems.
-                  </li>
-                  <li>
-                    Guide a team of 3 developers, conduct code reviews, and
-                    provide technical & logical input to the senior developer
-                    for strategic decisions.
-                  </li>
-                  <li>
-                    Collaborated with insurers to streamline technical
-                    integrations, to automate workflows and achieving 80% time
-                    savings.
-                  </li>
-                  <li>
-                    Manage EC2 infrastructure, handling deployments and
-                    performance tuning to ensure secure, high-availability
-                    systems.
-                  </li>
-                  <li>
-                    Trusted with full IT ownership during senior's
-                    absence taking charge of coding, bug fixing, server
-                    maintenance, and deployments to ensure smooth operations.
-                  </li>
-                </ul>
-              </div>
-
-              <div class="role">
-                <div class="role-header">
-                  <h4 class="role-title">Software Developer</h4>
-                  <span class="role-duration">Mar 2023 – Mar 2024</span>
-                </div>
-                <ul class="responsibilities">
-                  <li>
-                    Developed 2 projects from scratch, including full-stack
-                    development, database schema design, backend architecture,
-                    and deployment.
-                  </li>
-                  <li>
-                    Improved and optimized RESTful APIs, achieving a 90%
-                    performance gain through refactoring and architectural
-                    changes.
-                  </li>
-                  <li>
-                    Built RESTful APIs and Webhooks, improving system efficiency
-                    by 30%.
-                  </li>
-                  <li>
-                    Rapidly learned and utilized AWS Lambda, DynamoDB, and
-                    Serverless Framework to build cloud-based services.
-                  </li>
-                  <li>
-                    Worked closely with insurers like SBI, LIC, ICICI to
-                    automate processes and improve operational efficiency.
-                  </li>
-                </ul>
-              </div>
+          <!-- Tiny Epic -->
+          <article class="job reveal" id="job-tiny">
+            <div class="job-side">
+              <span class="when">Apr 2026 — Present</span>
+              <span class="where">Goregaon</span>
+              <span class="now-pill">Current</span>
             </div>
+            <div class="job-main card spot">
+              <header>
+                <h3>Senior Software Engineer</h3>
+                <p class="co"><a class="co-link" href="https://www.tinyepic.in/" target="_blank" rel="noopener">Tiny Epic Solutions Pvt Ltd</a></p>
+              </header>
+              <ul>
+                <li>Own and maintain the <b>Bonanza Group</b> and <b>Bonanza Online</b> PHP/Laravel platforms end to end: codebase, deployments, servers and production support, including security/VAPT fixes on databases with millions of records.</li>
+                <li>Built and shipped <b>PnL Timesheet</b> (Laravel, React), <b>Studiyo</b> video generation (Python, React), a <b>Customer Intelligence Platform</b> on Snowflake, and the Smart Touch (React) and Zenxo (Next.js) websites. Evaluated Fal.ai and aggregator options on capability and cost.</li>
+                <li>Established Tiny Epic's engineering foundation: separated its repositories from Bonanza's, set up <b>AWS EC2</b> infrastructure and <b>CI/CD</b>, and introduced a development → code review → deployment workflow.</li>
+                <li>Unified Bonanza production and beta on a single repository with separate branches, replacing ZIP-based beta releases with one source of truth.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- CML Senior -->
+          <article class="job reveal" id="job-cml-sr">
+            <div class="job-side">
+              <span class="when">Apr 2024 — Mar 2026</span>
+              <span class="where">Andheri</span>
+            </div>
+            <div class="job-main card spot">
+              <header>
+                <h3>Senior Software Developer</h3>
+                <p class="co"><a class="co-link" href="https://callmedilife.com/" target="_blank" rel="noopener">CallMediLife Healthcare Services</a></p>
+              </header>
+              <ul>
+                <li>Architected and integrated <b>Agora Video SDK</b> into a scalable in-house video meeting platform, replacing third-party services and <b>saving ₹20L+ annually</b>.</li>
+                <li>Optimized backend systems through API refactoring, database indexing and caching, improving throughput by <b>40%</b>.</li>
+                <li>Led and mentored a team of <b>5+ developers</b>, established code standards, ran reviews and reduced technical debt by <b>30%</b>.</li>
+                <li>Managed AWS EC2 infrastructure: deployments, performance tuning and <b>99%+ uptime</b>.</li>
+                <li>Took full technical ownership during management transitions, covering critical deployments, incident response and system maintenance.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- CML Dev -->
+          <article class="job reveal" id="job-cml-dev">
+            <div class="job-side">
+              <span class="when">Mar 2023 — Mar 2024</span>
+              <span class="where">Andheri</span>
+            </div>
+            <div class="job-main card spot">
+              <header>
+                <h3>Software Developer</h3>
+                <p class="co"><a class="co-link" href="https://callmedilife.com/" target="_blank" rel="noopener">CallMediLife Healthcare Services</a></p>
+              </header>
+              <ul>
+                <li>Architected and deployed <b>four full-stack applications</b> with relational/NoSQL databases and RESTful APIs on AWS production infrastructure.</li>
+                <li>Engineered and optimized APIs, improving response times by <b>90%</b> through indexing, query optimization and caching.</li>
+                <li>Designed webhook and event-driven endpoints, cutting latency by <b>30%</b> and enabling real-time data processing.</li>
+                <li>Implemented serverless microservices with <b>AWS Lambda, DynamoDB</b> and the Serverless Framework, with CI/CD pipelines.</li>
+                <li>Orchestrated integrations with enterprise systems (SBI, LIC, ICICI), reducing manual processing by <b>70%</b>.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Zedex -->
+          <article class="job reveal" id="job-zedex">
+            <div class="job-side">
+              <span class="when">Jan 2021 — Feb 2023</span>
+              <span class="where">Bhandup</span>
+            </div>
+            <div class="job-main card spot">
+              <header>
+                <h3>Web Developer</h3>
+                <p class="co"><a class="co-link" href="https://zedexinfo.com/" target="_blank" rel="noopener">ZedexInfo Private Limited</a></p>
+              </header>
+              <ul>
+                <li>Worked with distributed teams in the Netherlands, Ukraine and Dubai as a third-party resource, defining requirements and delivering <b>5+ web applications</b>.</li>
+                <li>Architected and deployed RESTful APIs for <b>10+ applications</b>; integrated PayPal, Stripe, SendGrid, FCM and AWS (SQS, EC2).</li>
+                <li>Built and maintained <b>ResourceQueue</b>, a core company product handling <b>100,000+ daily requests</b> at near 99% uptime.</li>
+                <li>Mentored 3+ junior developers and interns; contributed to documentation and onboarding.</li>
+                <li>Established a CI/CD pipeline for AWS EC2 deployments via GitHub, reducing deployment time and improving stability.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- STACK -->
+      <section id="stack" class="section wrap">
+        <div class="sec-head reveal" data-label="Skills">
+          <h2>Tools I work with</h2>
+          <p>The technologies I use day to day.</p>
+        </div>
+
+        <div class="stack-grid">
+          <div class="card stack reveal spot">
+            <h3><span class="dot d1"></span>Backend</h3>
+            <div class="chips lg"><span>PHP</span><span>Node.js</span><span>Laravel</span><span>Express.js</span><span>Yii2</span><span>Prisma</span><span>TypeORM</span><span>Mongoose</span></div>
           </div>
-
-          <div class="experience-item right">
-            <div class="experience-content">
-              <div class="experience-header">
-                <h3 class="company-name">ZedexInfo Private Limited</h3>
-                <div class="experience-meta">
-                  <span
-                    ><i class="far fa-calendar-alt"></i> Jan 2021 – Feb
-                    2023</span
-                  >
-                  <span><i class="fas fa-map-marker-alt"></i> Bhandup</span>
-                </div>
-              </div>
-
-              <div class="role">
-                <div class="role-header">
-                  <h4 class="role-title">Web Developer</h4>
-                  <span class="role-duration">Jan 2021 – Feb 2023</span>
-                </div>
-                <ul class="responsibilities">
-                  <li>
-                    Collaborated with cross-functional and remote teams
-                    (Netherlands & Ukraine) to gather requirements, brainstorm
-                    solutions, and deliver features in an agile environment.
-                  </li>
-                  <li>
-                    Designed and developed RESTful APIs for 10+ web
-                    applications, fully tested with Postman, and integrated
-                    third-party services like PayPal, Stripe, Sentry, AWS SQS,
-                    SendGrid, Flowmailer, MSG91, and FCM.
-                  </li>
-                  <li>
-                    Mentored junior developers & interns, supported onboarding
-                    of new employees, and led internal projects to completion.
-                  </li>
-                  <li>
-                    Developed and customized 5+ WordPress plugins to meet
-                    project specific requirements and enhance site
-                    functionality.
-                  </li>
-                  <li>
-                    Deployed updated codebases to EC2 servers using GitHub,
-                    ensuring stability, version control, and continuous
-                    delivery.
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <div class="card stack reveal spot">
+            <h3><span class="dot d2"></span>Frontend</h3>
+            <div class="chips lg"><span>JavaScript</span><span>TypeScript</span><span>React</span><span>React Native</span><span>HTML</span><span>CSS</span><span>Tailwind</span><span>Bootstrap</span><span>jQuery</span></div>
+          </div>
+          <div class="card stack reveal spot">
+            <h3><span class="dot d3"></span>Databases &amp; APIs</h3>
+            <div class="chips lg"><span>MySQL</span><span>MongoDB</span><span>Redis</span><span>SQL</span><span>NoSQL</span><span>REST</span><span>GraphQL</span><span>Postman</span><span>Swagger</span></div>
+          </div>
+          <div class="card stack reveal spot">
+            <h3><span class="dot d4"></span>DevOps &amp; AI tools</h3>
+            <div class="chips lg"><span>AWS</span><span>Docker</span><span>Linux</span><span>Git</span><span>CI/CD</span><span>Claude</span><span>GitHub Copilot</span><span>ChatGPT</span><span>Jira</span></div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
-
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3 class="category-title">
-              <i class="fas fa-code"></i> Programming Languages
-            </h3>
-            <div class="skills-list">
-              <span class="skill-tag">PHP</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">NodeJS</span>
+      <!-- PLAYGROUND -->
+      <section id="playground" class="section wrap">
+        <div class="sec-head reveal" data-label="Playground">
+          <h2>Things I've built for fun</h2>
+          <p>Small projects that run right in your browser.</p>
+        </div>
+        <div class="proj-grid">
+          <a class="proj card reveal" href="./playground/patatap/" target="_blank" rel="noopener">
+            <div class="thumb tap" aria-hidden="true"><i style="--c:#1abc9c;--s:54px;--x:14%;--y:22%"></i><i style="--c:#9b59b6;--s:38px;--x:52%;--y:12%"></i><i style="--c:#3498db;--s:70px;--x:62%;--y:44%"></i><i style="--c:#2ecc71;--s:30px;--x:30%;--y:62%"></i><i style="--c:#f1c40f;--s:22px;--x:82%;--y:16%"></i></div>
+            <div class="proj-body">
+              <h3>Patatap Clone <span class="ext" aria-hidden="true">↗</span></h3>
+              <p class="tagline">Your keyboard as an instrument</p>
+              <p>Press keys, or tap the on-screen keyboard, to trigger sounds and animations. Visuals drawn with Paper.js, audio played with Howler.js.</p>
+              <div class="chips"><span>JavaScript</span><span>Paper.js</span><span>Howler.js</span></div>
             </div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="category-title">
-              <i class="fas fa-layer-group"></i> Frameworks
-            </h3>
-            <div class="skills-list">
-              <span class="skill-tag">Laravel</span>
-              <span class="skill-tag">ExpressJS</span>
-              <span class="skill-tag">Yii2</span>
+          </a>
+          <a class="proj card reveal" href="./playground/rgb-game/" target="_blank" rel="noopener">
+            <div class="thumb rgb" aria-hidden="true"><i style="--c:#e5484d"></i><i style="--c:#30a46c"></i><i style="--c:#3e63dd"></i><i style="--c:#f5d90a"></i><i style="--c:#8e4ec6"></i><i style="--c:#12a594"></i><b>rgb(62, 99, 221)</b></div>
+            <div class="proj-body">
+              <h3>RGB Colour Guessing Game <span class="ext" aria-hidden="true">↗</span></h3>
+              <p class="tagline">Guess the colour from its numbers</p>
+              <p>A colour is described by its RGB value and you pick the matching swatch. Easy and hard modes, a streak counter and keyboard shortcuts, in plain JavaScript.</p>
+              <div class="chips"><span>JavaScript</span><span>DOM</span></div>
             </div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="category-title"><i class="fas fa-cubes"></i> CMS</h3>
-            <div class="skills-list">
-              <span class="skill-tag">WordPress</span>
+          </a>
+          <a class="proj card reveal" href="./playground/todo/" target="_blank" rel="noopener">
+            <div class="thumb todo" aria-hidden="true"><p><u></u><s></s></p><p class="done"><u></u><s></s></p><p><u></u><s></s></p></div>
+            <div class="proj-body">
+              <h3>Todo List <span class="ext" aria-hidden="true">↗</span></h3>
+              <p class="tagline">Plan the day, keep it saved</p>
+              <p>Add, complete and delete tasks, filter them, and keep them between visits. Built with jQuery and CSS.</p>
+              <div class="chips"><span>jQuery</span><span>CSS</span></div>
             </div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="category-title">
-              <i class="fas fa-laptop-code"></i> Frontend
-            </h3>
-            <div class="skills-list">
-              <span class="skill-tag">HTML</span>
-              <span class="skill-tag">CSS</span>
-              <span class="skill-tag">Bootstrap</span>
-              <span class="skill-tag">jQuery</span>
+          </a>
+          <a class="proj card reveal" href="./playground/gallery/" target="_blank" rel="noopener">
+            <div class="thumb gal" aria-hidden="true"><i style="--g:linear-gradient(135deg,#f6d365,#fda085)"></i><i style="--g:linear-gradient(135deg,#84fab0,#8fd3f4)"></i><i style="--g:linear-gradient(135deg,#a18cd1,#fbc2eb)"></i><i style="--g:linear-gradient(135deg,#667eea,#764ba2)"></i><i style="--g:linear-gradient(135deg,#fccb90,#d57eeb)"></i><i style="--g:linear-gradient(135deg,#43e97b,#38f9d7)"></i></div>
+            <div class="proj-body">
+              <h3>Image Gallery <span class="ext" aria-hidden="true">↗</span></h3>
+              <p class="tagline">Photos, full screen</p>
+              <p>A responsive photo gallery with a keyboard-friendly lightbox. Built on the Bootstrap grid.</p>
+              <div class="chips"><span>Bootstrap</span><span>HTML</span><span>CSS</span></div>
             </div>
-          </div>
+          </a>
+        </div>
+      </section>
 
-          <div class="skill-category">
-            <h3 class="category-title">
-              <i class="fas fa-database"></i> Databases
-            </h3>
-            <div class="skills-list">
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">MongoDB</span>
-            </div>
-          </div>
+      <!-- EDUCATION -->
+      <section id="education" class="section wrap">
+        <div class="sec-head reveal" data-label="Education">
+          <h2>Academic background</h2>
+          <p>Computer Science degrees, both with distinction-level CGPA.</p>
+        </div>
+        <div class="edu-grid">
+          <article class="card edu reveal spot">
+            <p class="cgpa">9.77<small>/10</small></p>
+            <h3>M.Sc. Computer Science</h3>
+            <p class="co"><a class="co-link" href="https://www.rjcollege.edu.in/" target="_blank" rel="noopener">Ramniranjan Jhunjhunwala College</a></p>
+            <p class="when">Graduated October 2020</p>
+          </article>
+          <article class="card edu reveal spot">
+            <p class="cgpa">9.44<small>/10</small></p>
+            <h3>B.Sc. Computer Science</h3>
+            <p class="co"><a class="co-link" href="https://rizvicollege.edu.in/" target="_blank" rel="noopener">Rizvi College of Arts, Science &amp; Commerce</a></p>
+            <p class="when">Graduated April 2018</p>
+          </article>
+        </div>
+      </section>
 
-          <div class="skill-category">
-            <h3 class="category-title">
-              <i class="fas fa-robot"></i> AI Tools
-            </h3>
-            <div class="skills-list">
-              <span class="skill-tag">ChatGPT</span>
-              <span class="skill-tag">Claude</span>
-              <span class="skill-tag">Copilot</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="category-title">
-              <i class="fas fa-tools"></i> Tools & Platforms
-            </h3>
-            <div class="skills-list">
-              <span class="skill-tag">AWS</span>
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">BitBucket</span>
-              <span class="skill-tag">GitLab</span>
-              <span class="skill-tag">Postman</span>
-              <span class="skill-tag">Linux</span>
-              <span class="skill-tag">Docker</span>
-              <span class="skill-tag">APIs</span>
-              <span class="skill-tag">Jira</span>
-              <span class="skill-tag">Asana</span>
-              <span class="skill-tag">Confluence</span>
-            </div>
+      <!-- CONTACT -->
+      <section id="contact" class="section wrap">
+        <div class="contact card reveal">
+          
+          <h2>Let's work together</h2>
+          <p>I'm open to conversations about senior engineering roles. Email is the quickest way to reach me.</p>
+          <div class="cta-row center">
+            <a href="mailto:contact@rizwansari.com" class="btn primary">contact@rizwansari.com</a>
+            <button class="btn ghost" id="copy-email" type="button">Copy email</button>
+            <a href="https://linkedin.com/in/ansari-rizwan" target="_blank" rel="noopener" class="btn ghost">LinkedIn</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Competencies Section -->
-    <section id="competencies" class="section">
-      <div class="container">
-        <h2 class="section-title">Core Competencies</h2>
-
-        <div class="competencies-list">
-          <div class="competency-item">
-            <div class="competency-icon">
-              <i class="fas fa-comments"></i>
-            </div>
-            <div class="competency-text">Effective Communication</div>
-          </div>
-
-          <div class="competency-item">
-            <div class="competency-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <div class="competency-text">Leadership & Mentorship</div>
-          </div>
-
-          <div class="competency-item">
-            <div class="competency-icon">
-              <i class="fas fa-check-circle"></i>
-            </div>
-            <div class="competency-text">Ownership & Accountability</div>
-          </div>
-
-          <div class="competency-item">
-            <div class="competency-icon">
-              <i class="fas fa-sync-alt"></i>
-            </div>
-            <div class="competency-text">Adaptability & Quick Learning</div>
-          </div>
-
-          <div class="competency-item">
-            <div class="competency-icon">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <div class="competency-text">
-              Problem Solving & Analytical Thinking
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-
-        <div class="education-container">
-          <div class="education-item">
-            <div class="education-header">
-              <h3 class="institution">Ramniranjan Jhunjhunwala College</h3>
-              <p class="course">M.Sc. Computer Science</p>
-            </div>
-            <div class="education-details">
-              <div class="education-meta">
-                <span>October 2020</span>
-                <span>CGPA: 9.77</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="education-item">
-            <div class="education-header">
-              <h3 class="institution">
-                Rizvi College of Arts, Science & Commerce
-              </h3>
-              <p class="course">B.Sc. Computer Science</p>
-            </div>
-            <div class="education-details">
-              <div class="education-meta">
-                <span>April 2018</span>
-                <span>CGPA: 9.44</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="education-item">
-            <div class="education-header">
-              <h3 class="institution">
-                K. J. Somaiya College Of Science And Commerce
-              </h3>
-              <p class="course">HSC (Science)</p>
-            </div>
-            <div class="education-details">
-              <div class="education-meta">
-                <span>February 2015</span>
-                <span>Percentage: 68.46%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="education-item">
-            <div class="education-header">
-              <h3 class="institution">Sarvodaya Vidyalaya No.2</h3>
-              <p class="course">SSC</p>
-            </div>
-            <div class="education-details">
-              <div class="education-meta">
-                <span>March 2013</span>
-                <span>Percentage: 91.45%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-      <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-
-        <div
-          class="contact-container"
-          style="text-align: center; max-width: 700px; margin: 0 auto"
-        >
-          <p style="margin-bottom: 40px; font-size: 1.1rem">
-            I'm always open to discussing new projects, creative ideas or
-            opportunities to be part of your vision. Feel free to reach out to
-            me!
-          </p>
-
-          <div
-            style="
-              display: flex;
-              justify-content: center;
-              gap: 25px;
-              flex-wrap: wrap;
-              margin-bottom: 50px;
-            "
-          >
-            <a
-              href="mailto:contact@rizwansari.com"
-              style="
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-                padding: 25px;
-                background: white;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-                width: 200px;
-                transition: all 0.3s ease;
-              "
-            >
-              <div
-                style="
-                  width: 60px;
-                  height: 60px;
-                  background: linear-gradient(
-                    135deg,
-                    var(--gradient-start),
-                    var(--gradient-end)
-                  );
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  color: white;
-                  font-size: 1.5rem;
-                "
-              >
-                <i class="fas fa-envelope"></i>
-              </div>
-              <h3 style="font-size: 1.2rem; color: var(--dark)">Email</h3>
-              <p style="color: var(--primary); font-weight: 500">
-                contact@rizwansari.com
-              </p>
-            </a>
-
-            <a
-              href="tel:+91********89"
-              style="
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-                padding: 25px;
-                background: white;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-                width: 200px;
-                transition: all 0.3s ease;
-              "
-            >
-              <div
-                style="
-                  width: 60px;
-                  height: 60px;
-                  background: linear-gradient(
-                    135deg,
-                    var(--gradient-start),
-                    var(--gradient-end)
-                  );
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  color: white;
-                  font-size: 1.5rem;
-                "
-              >
-                <i class="fas fa-phone"></i>
-              </div>
-              <h3 style="font-size: 1.2rem; color: var(--dark)">Phone</h3>
-              <p style="color: var(--primary); font-weight: 500">
-                +91 ********89
-              </p>
-            </a>
-
-            <a
-              href="https://linkedin.com/in/ansari-rizwan"
-              target="_blank"
-              style="
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-                padding: 25px;
-                background: white;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-                width: 200px;
-                transition: all 0.3s ease;
-              "
-            >
-              <div
-                style="
-                  width: 60px;
-                  height: 60px;
-                  background: linear-gradient(
-                    135deg,
-                    var(--gradient-start),
-                    var(--gradient-end)
-                  );
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  color: white;
-                  font-size: 1.5rem;
-                "
-              >
-                <i class="fab fa-linkedin-in"></i>
-              </div>
-              <h3 style="font-size: 1.2rem; color: var(--dark)">LinkedIn</h3>
-              <p style="color: var(--primary); font-weight: 500">
-                Connect with me
-              </p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-logo">Rizwan Ansari</div>
-          <div class="footer-nav">
-            <a href="#home">Home</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#competencies">Competencies</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <div class="footer-social">
-            <a href="https://rizwansari.com" target="_blank" title="Website">
-              <i class="fas fa-globe"></i>
-            </a>
-            <a
-              href="https://github.com/RizwAnsari"
-              target="_blank"
-              title="GitHub"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-            <a
-              href="https://linkedin.com/in/ansari-rizwan"
-              target="_blank"
-              title="LinkedIn"
-            >
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-          <p class="footer-text">
-            &copy; 2025 Rizwan Niyamat Ali Ansari. All Rights Reserved.
-          </p>
-        </div>
-      </div>
+    <footer class="footer wrap">
+      <span>© <span id="year">2026</span> Rizwan Ansari</span>
+      
+      <a href="#home">Back to top ↑</a>
     </footer>
 
-    <a href="#home" class="back-to-top">
-      <i class="fas fa-arrow-up"></i>
-    </a>
+    <!-- Command palette -->
+    <div class="palette" id="palette" hidden>
+      <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command palette">
+        <input id="palette-input" type="text" placeholder="Type a command or search…" autocomplete="off" />
+        <ul id="palette-list"></ul>
+        <p class="palette-foot"><kbd>↑</kbd><kbd>↓</kbd> navigate <kbd>↵</kbd> select <kbd>Esc</kbd> close</p>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
   </body>
 </html>
